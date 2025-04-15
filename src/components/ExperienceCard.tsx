@@ -20,7 +20,7 @@ export default function ExperienceCard({ url, title, fullDescription, cardDescri
                 viewport={{ amount: 0.1, once: true }}
             >
                 <div className={`p-4 flex md:flex-row flex-col gap-6 ${gradient} from-primary to-secondary rounded-lg border-1 border-accent shadow-2xl shadow-background items-center`}>
-                    <img alt="" draggable={false} className="rounded-lg md:h-[14rem] sm:h-[12rem] h-[10rem] grayscale group-hover:grayscale-0 duration-300" src={cardImage} />
+                    <img alt="" draggable={false} className="rounded-lg md:h-[14rem] sm:h-[12rem] h-[10rem] duration-300" src={cardImage} />
                     <div className="flex flex-col">
                         <h2 className="md:text-left text-center font-semibold text-4xl">
                             {myRole}

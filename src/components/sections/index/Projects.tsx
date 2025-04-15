@@ -63,30 +63,6 @@ export default function Projects() {
             delay={0.2}
             gradient="bg-gradient-to-tl"
           />
-          <ProjectCard
-            title="Tag Ranked"
-            fullDescription={[
-              "Tag Ranked is a discord bot that was made for hosting ranked games of TNT Tag. It has a full elo system, queue system, game system, and in-depth stats tracking.",
-              "It was first used in a 2 week long ranked event that had over 100 registered players and 3000+ games played and will continue to be used for future events.",
-            ]}
-            cardImage="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/uvwoo2z1.png"
-            cardDescription="Tag Ranked is a discord bot that was made for hosting ranked games of TNT Tag. It has a full elo system, queue system, game system, and in-depth stats tracking."
-            media={[
-              "https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/uvwoo2z1.png",
-              "https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/tenubdtb.png",
-              "https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/mln1pm2a.png",
-              "https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/kpyo5yzn.png",
-              "https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/nt1uy73q.png",
-              "https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/e0t3t3hy.png",
-              "https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/n4juvwp9.png",
-              "https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/yic6d1b0.png",
-              "https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/7i3fim3v.png"
-            ]}
-            myRole="Head Developer"
-            timeline="October 2024 - Present"
-            delay={0.1}
-            gradient="bg-gradient-to-t"
-          />
         </ul>
       </section>
     </>
