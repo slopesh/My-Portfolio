@@ -16,7 +16,7 @@ export default function Hero({ inView, descRef }: { inView: boolean, descRef: an
           ref={descRef}
         >
           <h1 className="font-bold lg:text-7xl md:text-6xl sm:text-5xl text-4xl">
-            Hey, I&apos;m Aiden<span className="sm:hidden inline-block animate-wave ml-2">👋</span><span className="font-bold text-xl brightness-50 italic sm:inline flex"> aka SKRRRTT</span><span className="sm:inline-block hidden animate-wave ml-2">👋</span>
+            Hey, I&apos;m Aiden<span className="sm:hidden inline-block animate-wave ml-2">👋</span><span className="sm:inline-block hidden animate-wave ml-2">👋</span>
           </h1>
           <p className="font-semibold lg:text-3xl md:text-2xl sm:text-xl text-lg">
             {inView &&
@@ -67,7 +67,7 @@ export default function Hero({ inView, descRef }: { inView: boolean, descRef: an
               delay={0.9}
             />
             <SocialIcon
-              url="https://namemc.com/profile/SKRRRTT"
+              url="https://namemc.com/profile/aidendotgg.1"
               icon={<svg viewBox="-8 -8 16 16" className='w-7 h-7 fill-neutral-400' shapeRendering="crispEdges" ><path d="M-5-5L+3-5L+3-3L+5-3L+5+5L+3+5L+3-3L-3-3L-3+5L-5+5"></path></svg>}
               delay={1.0}
             />
