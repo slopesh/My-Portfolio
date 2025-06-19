@@ -6,10 +6,10 @@ export default function Footer() {
             <footer className="max-w-4xl w-full flex flex-col mx-auto pt-4 pb-2">
                 <Divider />
                 <p className="text-center font-semibold text-base pt-2">
-                    Aiden.gg - Made with NextJS, TailwindCSS, and ❤ by me
+                    Built with Next.js + TailwindCSS • Crafted by Arrays with ❤️
                 </p>
                 <p className="text-center font-medium brightness-75 text-base">
-                    Last updated: June 10th, 2025
+                    Last updated: January 2025
                 </p>
             </footer>
         </>
