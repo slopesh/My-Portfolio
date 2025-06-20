@@ -5,6 +5,25 @@ import { motion } from "framer-motion";
 import Divider from "@/components/Divider";
 
 export default function PresenceCard({ presence, date, direction, span, gradient, delay }: { presence: Presence | null, date: Date, direction: 'top' | 'bottom' | 'left' | 'right', span: 1 | 2, gradient: string, delay: number }) {
+    // Combine Spotify and other activities into one list for the carousel
+    const allActivities = [];
+    if (presence?.spotify) {
+        allActivities.push({ ...presence.spotify, name: "Spotify" });
+    }
+    if (presence?.activities) {
+        allActivities.push(...presence.activities.filter(act => act.type !== 4)); // Filter out custom status
+    }
+
+    const getImageUrl = (activity: any) => {
+        if (activity.name === 'Spotify') {
+            return activity.album_art_url;
+        }
+        if (activity.assets?.large_image) {
+            return `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
+        }
+        return '/default-icon.png'; // A fallback image
+    };
+
     return (
         <>
             <motion.li
@@ -38,51 +57,34 @@ export default function PresenceCard({ presence, date, direction, span, gradient
                         emulateTouch={true}
                         showThumbs={false}
                     >
-                        {presence?.activities.map((activity, index) => (
-                            <div key={index} className="flex min-[450px]:flex-row flex-col gap-4 items-center px-1 select-none">
-                                <img alt="" className="max-w-28 max-h-28 rounded-lg" src={activity.assets.largeImage} />
-                                {activity.name === "Spotify" ?
+                        {allActivities.map((activity: any, index) => (
+                            <div key={index} className="flex min-[450px]:flex-row flex-col gap-4 items-center px-1 select-none h-full py-4">
+                                <img alt={activity.name} className="w-28 h-28 rounded-lg" src={getImageUrl(activity)} />
+                                {activity.name === "Spotify" ? (
                                     <div className="flex flex-col overflow-x-hidden w-full min-[450px]:text-left text-center">
-                                        <h1 className="text-lg font-bold leading-7">
-                                            {activity.title}
-                                        </h1>
-                                        <p className="text-lg font-medium leading-6 text-nowrap truncate">
-                                            {activity.details}
-                                        </p>
-                                        <p className="text-lg font-medium leading-6 text-nowrap truncate">
-                                            by {activity.state}
-                                        </p>
+                                        <h1 className="text-lg font-bold leading-7 truncate">{activity.song}</h1>
+                                        <p className="text-lg font-medium leading-6 text-nowrap truncate">by {activity.artist}</p>
+                                        <p className="text-lg font-medium leading-6 text-nowrap truncate">on {activity.album}</p>
                                         <div className="flex flex-row gap-2 justify-between mt-1 items-center">
-                                            <p className={`whitespace-normal text-sm`}>{new Date((date.getTime() - new Date(activity.timestamps.start).getTime())).toISOString().slice(14, 19)}</p>
+                                            <p className={`whitespace-normal text-sm`}>{new Date(date.getTime() - activity.timestamps.start).toISOString().slice(14, 19)}</p>
                                             <div className="w-full rounded-full h-2 bg-secondary overflow-x-hidden">
-                                                <div style={{ width: `${((date.getTime() - new Date(activity.timestamps.start).getTime()) / (new Date(activity.timestamps.end).getTime() - new Date(activity.timestamps.start).getTime())) * 100}%` }} className="h-2 rounded-full bg-white"></div>
+                                                <div style={{ width: `${((date.getTime() - activity.timestamps.start) / (activity.timestamps.end - activity.timestamps.start)) * 100}%` }} className="h-2 rounded-full bg-white"></div>
                                             </div>
-                                            <p className={`whitespace-normal text-sm`}>{new Date((new Date(activity.timestamps.end).getTime() - new Date(activity.timestamps.start).getTime())).toISOString().slice(14, 19)}</p>
+                                            <p className={`whitespace-normal text-sm`}>{new Date(activity.timestamps.end - activity.timestamps.start).toISOString().slice(14, 19)}</p>
                                         </div>
                                     </div>
-                                    :
+                                ) : (
                                     <div className="flex flex-col overflow-x-hidden w-full min-[450px]:text-left text-center">
-                                        <h1 className="text-lg font-bold leading-7">
-                                            {activity.title}
-                                        </h1>
-                                        <p className="text-lg font-medium leading-6 text-nowrap truncate">
-                                            {activity.details}
-                                        </p>
-                                        <p className="text-lg font-medium leading-6 text-nowrap truncate">
-                                            {activity.state}
-                                        </p>
-                                        {activity.timestamps.end && !activity.timestamps.start &&
+                                        <h1 className="text-lg font-bold leading-7 truncate">{activity.name}</h1>
+                                        <p className="text-lg font-medium leading-6 text-nowrap truncate">{activity.details}</p>
+                                        <p className="text-lg font-medium leading-6 text-nowrap truncate">{activity.state}</p>
+                                        {activity.timestamps?.start && (
                                             <p className="text-base leading-6 text-nowrap truncate">
-                                                {new Date((new Date(activity.timestamps.end).getTime() - date.getTime())).toISOString().slice(11, 19)} left
+                                                {new Date(date.getTime() - activity.timestamps.start).toISOString().slice(11, 19)} elapsed
                                             </p>
-                                        }
-                                        {activity.timestamps.start && !activity.timestamps.end &&
-                                            <p className="text-base leading-6 text-nowrap truncate">
-                                                {new Date((date.getTime() - new Date(activity.timestamps.start).getTime())).toISOString().slice(11, 19)} elapsed
-                                            </p>
-                                        }
+                                        )}
                                     </div>
-                                }
+                                )}
                             </div>
                         ))}
                     </Carousel>

@@ -6,37 +6,46 @@ interface Tech {
     link: string;
 }
 
+// Based on Lanyard's API Response
 export interface Presence {
-    _id: string;
-    tag: string;
-    pfp: string;
-    platform: ClientPresenceStatusData;
-    status: string;
-    activities: Activity[];
-    badges: string[];
-    customStatus: {
-        name: string;
-        createdTimestamp: number;
-        emoji: string;
+    discord_user: {
+        id: string;
+        username: string;
+        avatar: string;
+        discriminator: string;
     };
+    discord_status: string;
+    activities: Activity[];
+    spotify: {
+        track_id: string;
+        timestamps: {
+            start: number;
+            end: number;
+        };
+        song: string;
+        artist: string;
+        album_art_url: string;
+        album: string;
+    } | null;
 }
 
 interface Activity {
-  applicationId: string;
+  application_id: string;
   assets: {
-    largeImage: string;
-    largeText: string;
-    smallImage: string;
-    smallText: string;
+    large_image: string;
+    large_text: string;
+    small_image: string;
+    small_text: string;
   };
   details: string;
-  emoji: string;
+  emoji: {
+    name: string;
+  };
   name: string;
   state: string;
-  title: string;
   timestamps: {
-    start: Date;
-    end: Date;
+    start: number;
+    end: number;
   };
-  type: string;
+  type: number;
 }

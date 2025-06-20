@@ -1,6 +1,8 @@
 import AboutCard from "@/components/AboutCard";
-import { Tech } from "../../../../typings";
+import { Presence, Tech } from "../../../../typings";
 import { motion } from "framer-motion";
+import PresenceCard from "@/components/PresenceCard";
+import { useEffect, useState } from "react";
 
 export default function About() {
   // Frontend Technologies - Add more as needed
@@ -50,6 +52,42 @@ export default function About() {
     // Add more tools and technologies here - just copy the format above
   ]
 
+  const [presence, setPresence] = useState<Presence | null>(null);
+  const [date, setDate] = useState(new Date());
+  const discordId = "798136745068855326";
+
+  useEffect(() => {
+    const socket = new WebSocket(`wss://api.lanyard.rest/socket`);
+
+    const handleOpen = () => {
+      console.log("Lanyard WebSocket connected!");
+      socket.send(JSON.stringify({ op: 2, d: { subscribe_to_id: discordId } }));
+    };
+
+    const handleMessage = (event: MessageEvent) => {
+      const data = JSON.parse(event.data);
+
+      if (data.op === 1) { // Opcode 1: HELLO
+        const heartbeatInterval = data.d.heartbeat_interval;
+        setInterval(() => {
+          socket.send(JSON.stringify({ op: 3 }));
+        }, heartbeatInterval);
+      } else if (data.op === 0) { // Opcode 0: EVENT
+        setPresence(data.d);
+      }
+    };
+
+    socket.addEventListener("open", handleOpen);
+    socket.addEventListener("message", handleMessage);
+
+    const timer = setInterval(() => setDate(new Date()), 1000);
+
+    return () => {
+      socket.close();
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
     <>
       <section id='about' className="max-w-4xl w-full flex flex-col mx-auto">
@@ -94,10 +132,20 @@ export default function About() {
             description="I use a variety of tools, services, and technologies to streamline the development process."
             tech={otherTech}
             direction="bottom"
-            span={2}
+            span={presence && presence.activities.length > 0 ? 1 : 2}
             delay={0.1}
             gradient="bg-gradient-to-tr"
           />
+          {presence && presence.activities && presence.activities.length > 0 &&
+            <PresenceCard
+              presence={presence}
+              date={date}
+              direction="bottom"
+              span={1}
+              delay={0.1}
+              gradient="bg-gradient-to-tl"
+            />
+          }
         </ul>
       </section>
     </>
