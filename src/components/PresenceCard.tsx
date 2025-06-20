@@ -34,7 +34,14 @@ export default function PresenceCard({ presence, date, direction, span, gradient
                 viewport={{ amount: 0.1, once: true }}
             >
                 <div className={`${gradient} from-primary to-secondary p-4 flex flex-col rounded-lg border-1 border-accent shadow-2xl shadow-background`}>
-                    <style jsx global>
+                    {presence?.discord_user?.avatar && (
+                        <img
+                            src={`https://cdn.discordapp.com/avatars/${presence.discord_user.id}/${presence.discord_user.avatar}.png`}
+                            alt={presence.discord_user.username}
+                            className="w-20 h-20 rounded-full mx-auto mb-2"
+                        />
+                    )}
+                    <style>
                         {`.control-dots {
                             display: none;
                         }

@@ -105,7 +105,7 @@ export default function About() {
             title="Overall"
             description="Hey! I'm Arrays — a 16-year-old Full Stack Developer with nearly 4 years of hands-on experience across a wide range of tech stacks. I specialize in building scalable applications, experimenting with backend infrastructure, and creating smooth frontend experiences. Since 2018, I've also been deeply rooted in the technical Minecraft scene, working on everything from custom clients and proxy spoofers to automation systems and community tooling. I've proudly contributed to several major underground and open-source projects in that space. Outside of code, I'm an aviation geek, obsessed with flight routes, aircraft systems, and spontaneous travel ideas. I'm also pretty introverted—I don't talk much, but I build a lot."
             direction="top"
-            span={2}
+            span={1}
             delay={0.1}
             gradient="bg-gradient-to-tl"
           />
@@ -127,16 +127,7 @@ export default function About() {
             delay={0.2}
             gradient="bg-gradient-to-bl"
           />
-          <AboutCard
-            title="Other Technologies"
-            description="I use a variety of tools, services, and technologies to streamline the development process."
-            tech={otherTech}
-            direction="bottom"
-            span={presence && presence.activities.length > 0 ? 1 : 2}
-            delay={0.1}
-            gradient="bg-gradient-to-tr"
-          />
-          {presence && presence.activities && presence.activities.length > 0 &&
+          {presence && presence.activities && presence.activities.length > 0 ? (
             <PresenceCard
               presence={presence}
               date={date}
@@ -145,7 +136,16 @@ export default function About() {
               delay={0.1}
               gradient="bg-gradient-to-tl"
             />
-          }
+          ) : (
+            <AboutCard
+              title="Currently Doing"
+              description="Not online on Discord."
+              direction="bottom"
+              span={1}
+              delay={0.1}
+              gradient="bg-gradient-to-tl"
+            />
+          )}
         </ul>
       </section>
     </>

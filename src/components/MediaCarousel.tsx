@@ -36,19 +36,54 @@ export default function MediaCarousel({ media }: { media: string[] }) {
                     key={i}
                     className="flex w-full flex-shrink-0 snap-center justify-center rounded-lg"
                 >
-                    {src.includes('.mp4') ?
-                        <video
-                            src={src}
-                            muted
-                            loop
-                            controls
-                        />
-                        :
-                        <img
-                            src={src}
-                            alt={`Media ${i}`}
-                        />
-                    }
+                    {(() => {
+                        if (src.includes('.mp4')) {
+                            return (
+                                <video
+                                    src={src}
+                                    muted
+                                    loop
+                                    controls
+                                />
+                            );
+                        }
+
+                        if (src.includes('youtube.com') || src.includes('youtu.be')) {
+                            let videoId;
+                            if (src.includes('youtube.com/watch')) {
+                                try {
+                                    videoId = new URL(src).searchParams.get('v');
+                                } catch (e) {
+                                    // invalid url
+                                }
+                            } else if (src.includes('youtu.be')) {
+                                try {
+                                    videoId = new URL(src).pathname.substring(1);
+                                } catch (e) {
+                                    // invalid url
+                                }
+                            }
+
+                            if (videoId) {
+                                return (
+                                    <iframe
+                                        className="w-full aspect-video"
+                                        src={`https://www.youtube.com/embed/${videoId}`}
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    ></iframe>
+                                );
+                            }
+                        }
+
+                        return (
+                            <img
+                                src={src}
+                                alt={`Media ${i}`}
+                            />
+                        );
+                    })()}
                 </div>
             ))}
             {media.length > 1 && <CarouselControl handleNext={nextMedia} handlePrevious={previousMedia} />}
