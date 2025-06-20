@@ -129,25 +129,31 @@ export default function About() {
               gradient="bg-gradient-to-bl"
             />
           </div>
-          <AboutCard
-            title="Other Technologies"
-            description="I use a variety of tools, services, and technologies to streamline the development process."
-            tech={otherTech}
-            direction="bottom"
-            span={2}
-            delay={0.1}
-            gradient="bg-gradient-to-tr"
-          />
-          {presence && presence.activities && presence.activities.length > 0 && (
-            <PresenceCard
-              presence={presence}
-              date={date}
-              direction="bottom"
-              span={2}
-              delay={0.1}
-              gradient="bg-gradient-to-tl"
-            />
-          )}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className={` ${presence && presence.activities.length > 0 ? 'md:col-span-2' : 'md:col-span-3'}`}>
+              <AboutCard
+                title="Other Technologies"
+                description="I use a variety of tools, services, and technologies to streamline the development process."
+                tech={otherTech}
+                direction="bottom"
+                span={2}
+                delay={0.1}
+                gradient="bg-gradient-to-tr"
+              />
+            </div>
+            {presence && presence.activities && presence.activities.length > 0 && (
+              <div className="md:col-span-1">
+                <PresenceCard
+                  presence={presence}
+                  date={date}
+                  direction="bottom"
+                  span={1}
+                  delay={0.1}
+                  gradient="bg-gradient-to-tl"
+                />
+              </div>
+            )}
+          </div>
         </div>
       </section>
     </>

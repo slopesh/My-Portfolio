@@ -26,7 +26,7 @@ export default function PresenceCard({ presence, date, direction, span, gradient
 
     return (
         <>
-            <motion.li
+            <motion.div
                 className={`${span === 1 ? 'min-[940px]:col-span-1 col-span-2' : 'col-span-2'} `}
                 initial={{ transform: `translate${direction === 'top' || direction === 'bottom' ? 'Y' : 'X'}(${direction === 'top' || direction === 'left' ? '-' : ''}30px)`, opacity: 0 }}
                 whileInView={{ transform: `translate${direction === 'top' || direction === 'bottom' ? 'Y' : 'X'}(0px)`, opacity: 100 }}
@@ -89,7 +89,7 @@ export default function PresenceCard({ presence, date, direction, span, gradient
                         ))}
                     </Carousel>
                 </div>
-            </motion.li>
+            </motion.div>
         </>
     );
 }

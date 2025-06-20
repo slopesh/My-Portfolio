@@ -7,8 +7,8 @@ import { Tech } from "../../typings";
 export default function AboutCard({ title, description, tech, direction, span, gradient, delay }: { title: string, description: string, tech?: Tech[], direction: 'top' | 'bottom' | 'left' | 'right', span: 1 | 2, gradient: string, delay: number }) {
     return (
         <>
-            <motion.li
-                className={`list-none ${span === 1 ? 'min-[940px]:col-span-1 col-span-2' : 'col-span-2'}`}
+            <motion.div
+                className={`${span === 1 ? 'min-[940px]:col-span-1 col-span-2' : 'col-span-2'} `}
                 initial={{ transform: `translate${direction === 'top' || direction === 'bottom' ? 'Y' : 'X'}(${direction === 'top' || direction === 'left' ? '-' : ''}30px)`, opacity: 0 }}
                 whileInView={{ transform: `translate${direction === 'top' || direction === 'bottom' ? 'Y' : 'X'}(0px)`, opacity: 100 }}
                 transition={{ duration: 0.5, delay: delay, ease: [0.39, 0.21, 0.12, 0.96], }}
@@ -35,7 +35,7 @@ export default function AboutCard({ title, description, tech, direction, span, g
                         </>
                     }
                 </div>
-            </motion.li>
+            </motion.div>
         </>
     );
 }
