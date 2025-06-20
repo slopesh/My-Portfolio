@@ -100,45 +100,44 @@ export default function About() {
         >
           About Me
         </motion.h1>
-        <div className="grid grid-cols-2 grid-rows-2 gap-4 mt-4 h-[38rem]">
+        <div className="flex flex-col gap-4 mt-4">
           <AboutCard
             title="Overall"
             description="Hey! I'm Arrays — a 16-year-old Full Stack Developer with nearly 4 years of hands-on experience across a wide range of tech stacks. I specialize in building scalable applications, experimenting with backend infrastructure, and creating smooth frontend experiences. Since 2018, I've also been deeply rooted in the technical Minecraft scene, working on everything from custom clients and proxy spoofers to automation systems and community tooling. I've proudly contributed to several major underground and open-source projects in that space. Outside of code, I'm an aviation geek, obsessed with flight routes, aircraft systems, and spontaneous travel ideas. I'm also pretty introverted—I don't talk much, but I build a lot."
             direction="top"
-            span={1}
+            span={2}
             delay={0.1}
             gradient="bg-gradient-to-tl"
           />
-          <AboutCard
-            title="Frontend"
-            description="I have experience with modern frontend frameworks and libraries, creating responsive and user-friendly interfaces."
-            tech={frontendTech}
-            direction="left"
-            span={1}
-            delay={0.15}
-            gradient="bg-gradient-to-br"
-          />
-          <AboutCard
-            title="Backend"
-            description="I work with various backend technologies to build robust APIs and server-side applications."
-            tech={backendTech}
-            direction="right"
-            span={1}
-            delay={0.2}
-            gradient="bg-gradient-to-bl"
-          />
-          {presence && presence.activities && presence.activities.length > 0 ? (
-            <PresenceCard
-              presence={presence}
-              date={date}
-              direction="bottom"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <AboutCard
+              title="Frontend"
+              description="I have experience with modern frontend frameworks and libraries, creating responsive and user-friendly interfaces."
+              tech={frontendTech}
+              direction="left"
               span={1}
-              delay={0.1}
-              gradient="bg-gradient-to-tl"
+              delay={0.15}
+              gradient="bg-gradient-to-br"
             />
-          ) : (
-            <div />
-          )}
+            <AboutCard
+              title="Backend"
+              description="I work with various backend technologies to build robust APIs and server-side applications."
+              tech={backendTech}
+              direction="right"
+              span={1}
+              delay={0.2}
+              gradient="bg-gradient-to-bl"
+            />
+          </div>
+          <AboutCard
+            title="Other Technologies"
+            description="I use a variety of tools, services, and technologies to streamline the development process."
+            tech={otherTech}
+            direction="bottom"
+            span={2}
+            delay={0.1}
+            gradient="bg-gradient-to-tr"
+          />
         </div>
       </section>
     </>
