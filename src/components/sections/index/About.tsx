@@ -100,15 +100,17 @@ export default function About() {
         >
           About Me
         </motion.h1>
-        <ul className="grid grid-cols-2 gap-4 mt-4 items-stretch">
-          <AboutCard
-            title="Overall"
-            description="Hey! I'm Arrays — a 16-year-old Full Stack Developer with nearly 4 years of hands-on experience across a wide range of tech stacks. I specialize in building scalable applications, experimenting with backend infrastructure, and creating smooth frontend experiences. Since 2018, I've also been deeply rooted in the technical Minecraft scene, working on everything from custom clients and proxy spoofers to automation systems and community tooling. I've proudly contributed to several major underground and open-source projects in that space. Outside of code, I'm an aviation geek, obsessed with flight routes, aircraft systems, and spontaneous travel ideas. I'm also pretty introverted—I don't talk much, but I build a lot."
-            direction="top"
-            span={1}
-            delay={0.1}
-            gradient="bg-gradient-to-tl"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div className="md:col-span-3">
+            <AboutCard
+              title="Overall"
+              description="Hey! I'm Arrays — a 16-year-old Full Stack Developer with nearly 4 years of hands-on experience across a wide range of tech stacks. I specialize in building scalable applications, experimenting with backend infrastructure, and creating smooth frontend experiences. Since 2018, I've also been deeply rooted in the technical Minecraft scene, working on everything from custom clients and proxy spoofers to automation systems and community tooling. I've proudly contributed to several major underground and open-source projects in that space. Outside of code, I'm an aviation geek, obsessed with flight routes, aircraft systems, and spontaneous travel ideas. I'm also pretty introverted—I don't talk much, but I build a lot."
+              direction="top"
+              span={2}
+              delay={0.1}
+              gradient="bg-gradient-to-tl"
+            />
+          </div>
           <AboutCard
             title="Frontend"
             description="I have experience with modern frontend frameworks and libraries, creating responsive and user-friendly interfaces."
@@ -127,7 +129,7 @@ export default function About() {
             delay={0.2}
             gradient="bg-gradient-to-bl"
           />
-          {presence && presence.activities && presence.activities.length > 0 ? (
+          {presence && presence.activities && presence.activities.length > 0 && (
             <PresenceCard
               presence={presence}
               date={date}
@@ -136,17 +138,8 @@ export default function About() {
               delay={0.1}
               gradient="bg-gradient-to-tl"
             />
-          ) : (
-            <AboutCard
-              title="Currently Doing"
-              description="Not online on Discord."
-              direction="bottom"
-              span={1}
-              delay={0.1}
-              gradient="bg-gradient-to-tl"
-            />
           )}
-        </ul>
+        </div>
       </section>
     </>
   );
