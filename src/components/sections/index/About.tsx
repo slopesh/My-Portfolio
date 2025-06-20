@@ -100,7 +100,7 @@ export default function About() {
         >
           About Me
         </motion.h1>
-        <ul className="grid grid-cols-2 gap-4 mt-4">
+        <ul className="grid grid-cols-2 gap-4 mt-4 items-stretch">
           <AboutCard
             title="Overall"
             description="Hey! I'm Arrays — a 16-year-old Full Stack Developer with nearly 4 years of hands-on experience across a wide range of tech stacks. I specialize in building scalable applications, experimenting with backend infrastructure, and creating smooth frontend experiences. Since 2018, I've also been deeply rooted in the technical Minecraft scene, working on everything from custom clients and proxy spoofers to automation systems and community tooling. I've proudly contributed to several major underground and open-source projects in that space. Outside of code, I'm an aviation geek, obsessed with flight routes, aircraft systems, and spontaneous travel ideas. I'm also pretty introverted—I don't talk much, but I build a lot."

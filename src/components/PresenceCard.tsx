@@ -33,7 +33,7 @@ export default function PresenceCard({ presence, date, direction, span, gradient
                 transition={{ duration: 0.5, delay: delay, ease: [0.39, 0.21, 0.12, 0.96], }}
                 viewport={{ amount: 0.1, once: true }}
             >
-                <div className={`${gradient} from-primary to-secondary p-4 flex flex-col rounded-lg border-1 border-accent shadow-2xl shadow-background`}>
+                <div className={`${gradient} from-primary to-secondary p-4 flex flex-col h-64 w-full overflow-hidden rounded-lg border-1 border-accent shadow-2xl shadow-background`}>
                     {presence?.discord_user?.avatar && (
                         <img
                             src={`https://cdn.discordapp.com/avatars/${presence.discord_user.id}/${presence.discord_user.avatar}.png`}
