@@ -8,7 +8,7 @@ export default function AboutCard({ title, description, tech, direction, span, g
     return (
         <>
             <motion.li
-                className={`${span === 1 ? 'min-[940px]:col-span-1 col-span-2' : 'col-span-2'} `}
+                className={`list-none ${span === 1 ? 'min-[940px]:col-span-1 col-span-2' : 'col-span-2'}`}
                 initial={{ transform: `translate${direction === 'top' || direction === 'bottom' ? 'Y' : 'X'}(${direction === 'top' || direction === 'left' ? '-' : ''}30px)`, opacity: 0 }}
                 whileInView={{ transform: `translate${direction === 'top' || direction === 'bottom' ? 'Y' : 'X'}(0px)`, opacity: 100 }}
                 transition={{ duration: 0.5, delay: delay, ease: [0.39, 0.21, 0.12, 0.96], }}
@@ -25,7 +25,7 @@ export default function AboutCard({ title, description, tech, direction, span, g
                         <>
                             <Divider />
                             <Marquee pauseOnHover speed={70} className="my-2">
-                                <ul className="flex flex-row">
+                                <ul className="flex flex-row list-none">
                                     {tech.map((tech: Tech) => (
                                         <TechBadge key={tech.title} title={tech.title} icon={tech.icon} link={tech.link} />
                                     ))}

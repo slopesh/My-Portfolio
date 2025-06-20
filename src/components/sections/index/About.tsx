@@ -138,6 +138,16 @@ export default function About() {
             delay={0.1}
             gradient="bg-gradient-to-tr"
           />
+          {presence && presence.activities && presence.activities.length > 0 && (
+            <PresenceCard
+              presence={presence}
+              date={date}
+              direction="bottom"
+              span={2}
+              delay={0.1}
+              gradient="bg-gradient-to-tl"
+            />
+          )}
         </div>
       </section>
     </>
