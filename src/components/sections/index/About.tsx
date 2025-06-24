@@ -40,7 +40,7 @@ export default function About() {
   let otherTech: Tech[] = [
     { title: "Git", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />, link: "https://git-scm.com/" },
     { title: "Github", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />, link: "https://github.com/" },
-    { title: "PostHog", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/posthog/posthog-icon.svg" />, link: "https://posthog.com/" },
+    { title: "PostHog", icon: <img alt="" draggable={false} className="h-6" src="https://icon.horse/icon/posthog.com" />, link: "https://posthog.com/" },
     { title: "cside", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=cside.dev" />, link: "https://cside.dev/" },
     { title: "NPM", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" />, link: "https://www.npmjs.com/" },
     { title: "Visual Studio Code", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />, link: "https://code.visualstudio.com/" },
@@ -112,7 +112,7 @@ export default function About() {
             delay={0.1}
             gradient="bg-gradient-to-tl"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
             <AboutCard
               title="Frontend"
               description="I have experience with modern frontend frameworks and libraries, creating responsive and user-friendly interfaces."
@@ -132,7 +132,7 @@ export default function About() {
               gradient="bg-gradient-to-bl"
             />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
             <div className={`${presence && presence.activities && presence.activities.length > 0 ? 'md:col-span-1' : 'md:col-span-2'}`}>
               <AboutCard
                 title="Other Technologies"
