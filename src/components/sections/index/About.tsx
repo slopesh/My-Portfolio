@@ -27,6 +27,7 @@ export default function About() {
     { title: "JavaScript", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />, link: "https://www.javascript.com/" },
     { title: "TypeScript", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />, link: "https://www.typescriptlang.org" },
     { title: "NodeJS", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />, link: "https://nodejs.org/" },
+    { title: "Postman", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" />, link: "https://www.postman.com/" },
     { title: "MongoDB", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" />, link: "https://www.mongodb.com/" },
     { title: "Redis", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" />, link: "https://redis.io/" },
     { title: "DiscordJS", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/discordjs/discordjs-original.svg" />, link: "https://discord.js.org/" },
@@ -41,7 +42,10 @@ export default function About() {
     { title: "Git", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />, link: "https://git-scm.com/" },
     { title: "Github", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />, link: "https://github.com/" },
     { title: "PostHog", icon: <img alt="" draggable={false} className="h-6" src="https://icon.horse/icon/posthog.com" />, link: "https://posthog.com/" },
-    { title: "cside", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=cside.dev" />, link: "https://cside.dev/" },
+    { title: "Betterstack", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/betterstack/betterstack-icon.svg" />, link: "https://betterstack.com/" },
+    { title: "Paessler", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/paessler/paessler-icon.svg" />, link: "https://www.paessler.com/" },
+    { title: "Fastly", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/fastly/fastly-icon.svg" />, link: "https://www.fastly.com/" },
+    { title: "cside", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/cside-logo.png" />, link: "https://cside.dev/" },
     { title: "NPM", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" />, link: "https://www.npmjs.com/" },
     { title: "Visual Studio Code", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />, link: "https://code.visualstudio.com/" },
     { title: "Insomnia", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/qr3zqlfckx6hkdj0nl.png" />, link: "https://insomnia.rest/" },
@@ -58,7 +62,6 @@ export default function About() {
   const [presence, setPresence] = useState<Presence | null>(null);
   const [date, setDate] = useState(new Date());
   const discordId = "798136745068855326";
-
   useEffect(() => {
     const socket = new WebSocket(`wss://api.lanyard.rest/socket`);
 
