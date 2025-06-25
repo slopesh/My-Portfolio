@@ -33,7 +33,8 @@ export default function About() {
     { title: "DiscordJS", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/discordjs/discordjs-original.svg" />, link: "https://discord.js.org/" },
     { title: "Fastify", icon: <img alt="" draggable={false} className="h-5" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/g9j04tdrsj5wwzw76d.png" />, link: "https://fastify.dev/" },
     { title: "Bun", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bun/bun-original.svg" />, link: "https://bun.sh/" },
-    { title: "Elysia", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/y1iick8a.png" />, link: "https://elysiajs.com/" }
+    { title: "Elysia", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/y1iick8a.png" />, link: "https://elysiajs.com/" },
+    { title: "Datadoghq", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/datadoghq/datadoghq-icon.svg" />, link: "https://www.datadoghq.com/" }
     // Add more backend technologies here - just copy the format above
   ]
 
@@ -46,6 +47,10 @@ export default function About() {
     { title: "Paessler", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/paessler/paessler-icon.svg" />, link: "https://www.paessler.com/" },
     { title: "Fastly", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/fastly/fastly-icon.svg" />, link: "https://www.fastly.com/" },
     { title: "cside", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/cside-logo.png" />, link: "https://cside.dev/" },
+    { title: "Cursor", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/cursor/cursor-icon.svg" />, link: "https://www.cursor.com/" },
+    { title: "Zed", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/zed/zed-icon.svg" />, link: "https://zed.dev/" },
+    { title: "Raycast", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/raycast/raycast-icon.svg" />, link: "https://www.raycast.com/" },
+    { title: "Moosend", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/moosend/moosend-icon.svg" />, link: "https://moosend.com/" },
     { title: "NPM", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" />, link: "https://www.npmjs.com/" },
     { title: "Visual Studio Code", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />, link: "https://code.visualstudio.com/" },
     { title: "Insomnia", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/qr3zqlfckx6hkdj0nl.png" />, link: "https://insomnia.rest/" },
