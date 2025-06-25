@@ -18,7 +18,9 @@ export default function About() {
     { title: "Figma", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />, link: "https://figma.com"},
     { title: "Framer Motion", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/5q2uj9zv.png" />, link: "https://www.framer.com/motion/" },
     { title: "Sass", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" />, link: "https://sass-css.org/" },
-    { title: "Gsap", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/zkji5ma1.png" />, link: "https://gsap.com/" }
+    { title: "Gsap", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/zkji5ma1.png" />, link: "https://gsap.com/" },
+    { title: "MaterialUI", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=mui.com" />, link: "https://mui.com/" },
+    { title: "ShadCN", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=ui.shadcn.com" />, link: "https://ui.shadcn.com/" }
     // Add more frontend technologies here - just copy the format above
   ]
 
@@ -34,7 +36,9 @@ export default function About() {
     { title: "Fastify", icon: <img alt="" draggable={false} className="h-5" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/g9j04tdrsj5wwzw76d.png" />, link: "https://fastify.dev/" },
     { title: "Bun", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bun/bun-original.svg" />, link: "https://bun.sh/" },
     { title: "Elysia", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/y1iick8a.png" />, link: "https://elysiajs.com/" },
-    { title: "Datadoghq", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/datadoghq/datadoghq-icon.svg" />, link: "https://www.datadoghq.com/" }
+    { title: "Datadoghq", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/datadoghq/datadoghq-icon.svg" />, link: "https://www.datadoghq.com/" },
+    { title: "Sentry", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=sentry.io" />, link: "https://sentry.io/welcome/" },
+    { title: "Morningscore", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=morningscore.io" />, link: "https://morningscore.io/" }
     // Add more backend technologies here - just copy the format above
   ]
 
