@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { NextSeo } from "next-seo";
 import { useRouter } from 'next/router'
 import { League_Spartan } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react';
 
 const leagueSpartan = League_Spartan({ subsets: ['latin'] })
 
@@ -34,6 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
       <Component {...pageProps} />
+      <Analytics />
     </main>
   )
 }
