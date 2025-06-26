@@ -20,7 +20,8 @@ export default function About() {
     { title: "Sass", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" />, link: "https://sass-css.org/" },
     { title: "Gsap", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/zkji5ma1.png" />, link: "https://gsap.com/" },
     { title: "MaterialUI", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg" />, link: "https://mui.com/" },
-    { title: "ShadCN", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/shadcn/shadcn-icon.svg" />, link: "https://ui.shadcn.com/" }
+    { title: "ShadCN", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/shadcn/shadcn-icon.svg" />, link: "https://ui.shadcn.com/" },
+    { title: "CloudCannon", icon: <img alt="" draggable={false} className="h-6" src="https://cloudcannon.com/images/logo-icon.svg" />, link: "https://cloudcannon.com/" }
     // Add more frontend technologies here - just copy the format above
   ]
 
@@ -62,7 +63,10 @@ export default function About() {
     { title: "Coolify", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/92tzzi14.png" />, link: "https://coolify.io" },
     { title: "Vercel", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" />, link: "https://vercel.com/" },
     { title: "Linux", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" />, link: "https://www.linux.org/" },
-    { title: "Tensorflow", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" />, link: "https://www.tensorflow.org/" }
+    { title: "Tensorflow", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" />, link: "https://www.tensorflow.org/" },
+    { title: "UTM VM", icon: <img alt="" draggable={false} className="h-6" src="https://mac.getutm.app/images/utm-icon.svg" />, link: "https://mac.getutm.app/" },
+    { title: "MacBrew", icon: <img alt="" draggable={false} className="h-6" src="https://brew.sh/assets/img/homebrew-256x256.png" />, link: "https://brew.sh/" },
+    { title: "Hyper", icon: <img alt="" draggable={false} className="h-6" src="https://hyper.is/static/favicon.ico" />, link: "https://hyper.is/" }
     // Add more tools and technologies here - just copy the format above
   ]
 
