@@ -6,6 +6,7 @@ import MediaCarousel from "@/components/MediaCarousel";
 import Button from "@/components/Button";
 import LinkButton from "@/components/LinkButton";
 import Divider from "@/components/Divider";
+import Image from 'next/image'
 
 export default function ExperienceCard({ url, title, fullDescription, cardDescription, cardImage, media, delay, gradient, myRole, timeline }: { url?: string, title: string, fullDescription: string[], cardDescription: string, cardImage: string, media: string[], delay: number, gradient: string, myRole: string, timeline: string }) {
     const [modalOpen, setModalOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function ExperienceCard({ url, title, fullDescription, cardDescri
                 viewport={{ amount: 0.1, once: true }}
             >
                 <div className={`p-4 flex md:flex-row flex-col gap-6 ${gradient} from-primary to-secondary rounded-lg border-1 border-accent shadow-2xl shadow-background items-center`}>
-                    <img alt="" draggable={false} className="rounded-lg md:h-[14rem] sm:h-[12rem] h-[10rem] duration-300" src={cardImage} />
+                    <Image alt="" draggable={false} className="rounded-lg md:h-[14rem] sm:h-[12rem] h-[10rem] duration-300" src={cardImage} width={400} height={224} />
                     <div className="flex flex-col">
                         <h2 className="md:text-left text-center font-semibold text-4xl">
                             {myRole}

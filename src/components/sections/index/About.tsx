@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import PresenceCard from "@/components/PresenceCard";
 import { useEffect, useState } from "react";
 
+// TODO: Refactor all <img> icons to use next/image for further optimization. next/image does not support external SVGs and favicons easily, so this requires custom handling.
+
 export default function About() {
   // Frontend Technologies - Add more as needed
   let frontendTech: Tech[] = [
@@ -17,6 +19,7 @@ export default function About() {
     { title: "NuxtJS", icon: <svg className="h-5 w-[30px]" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M168 200H279C282.542 200 285.932 198.756 289 197C292.068 195.244 295.23 193.041 297 190C298.77 186.959 300.002 183.51 300 179.999C299.998 176.488 298.773 173.04 297 170.001L222 41C220.23 37.96 218.067 35.7552 215 34C211.933 32.2448 207.542 31 204 31C200.458 31 197.067 32.2448 194 34C190.933 35.7552 188.77 37.96 187 41L168 74L130 9.99764C128.228 6.95784 126.068 3.75491 123 2C119.932 0.245087 116.542 0 113 0C109.458 0 106.068 0.245087 103 2C99.9323 3.75491 96.7717 6.95784 95 9.99764L2 170.001C0.226979 173.04 0.00154312 176.488 1.90993e-06 179.999C-0.0015393 183.51 0.229648 186.959 2 190C3.77035 193.04 6.93245 195.244 10 197C13.0675 198.756 16.4578 200 20 200H90C117.737 200 137.925 187.558 152 164L186 105L204 74L259 168H186L168 200ZM89 168H40L113 42L150 105L125.491 147.725C116.144 163.01 105.488 168 89 168Z" fill="#00DC82"></path></svg>, link: "https://nuxt.com/" },
     { title: "Figma", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />, link: "https://figma.com"},
     { title: "Framer Motion", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/5q2uj9zv.png" />, link: "https://www.framer.com/motion/" },
+    { title: "Motion", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=motion.dev" />, link: "https://motion.dev/" },
     { title: "Sass", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" />, link: "https://sass-css.org/" },
     { title: "Gsap", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/zkji5ma1.png" />, link: "https://gsap.com/" },
     { title: "MaterialUI", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg" />, link: "https://mui.com/" },
@@ -39,7 +42,9 @@ export default function About() {
     { title: "Elysia", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/y1iick8a.png" />, link: "https://elysiajs.com/" },
     { title: "Datadoghq", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/datadoghq/datadoghq-icon.svg" />, link: "https://www.datadoghq.com/" },
     { title: "Sentry", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/sentryio/sentryio-icon.svg" />, link: "https://sentry.io/welcome/" },
-    { title: "Morningscore", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/morningscore/morningscore-icon.svg" />, link: "https://morningscore.io/" }
+    { title: "Morningscore", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/morningscore/morningscore-icon.svg" />, link: "https://morningscore.io/" },
+    { title: "Auth0", icon: <img alt="Auth0" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=auth0.com" />, link: "https://auth0.com/" },
+    { title: "RubyOnRails", icon: <img alt="RubyOnRails" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=rubyonrails.org" />, link: "https://rubyonrails.org/" }
     // Add more backend technologies here - just copy the format above
   ]
 
@@ -65,7 +70,12 @@ export default function About() {
     { title: "Linux", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" />, link: "https://www.linux.org/" },
     { title: "Tensorflow", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" />, link: "https://www.tensorflow.org/" },
     { title: "MacBrew", icon: <img alt="" draggable={false} className="h-6" src="https://brew.sh/assets/img/homebrew-256x256.png" />, link: "https://brew.sh/" },
-    { title: "Hyper", icon: <img alt="" draggable={false} className="h-6" src="https://hyper.is/static/favicon.ico" />, link: "https://hyper.is/" }
+    { title: "Hyper", icon: <img alt="" draggable={false} className="h-6" src="https://hyper.is/static/favicon.ico" />, link: "https://hyper.is/" },
+    { title: "Firebase", icon: <img alt="Firebase" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=firebase.studio" />, link: "https://firebase.studio/" },
+    { title: "Cobalt", icon: <img alt="Cobalt" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=cobalt.tools" />, link: "https://cobalt.tools/" },
+    { title: "OpenRouter", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=openrouter.ai" />, link: "https://openrouter.ai/" },
+    { title: "Roocode", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=roocode.com" />, link: "https://roocode.com/" },
+    { title: "Mobbin", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=mobbin.com" />, link: "https://mobbin.com/" }
     // Add more tools and technologies here - just copy the format above
   ]
 

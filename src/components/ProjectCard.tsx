@@ -5,6 +5,7 @@ import Modal from "@/components/Modal";
 import MediaCarousel from "@/components/MediaCarousel";
 import Button from "@/components/Button";
 import LinkButton from "@/components/LinkButton";
+import Image from 'next/image'
 
 export default function ProjectCard({ url, title, fullDescription, cardDescription, cardImage, media, delay, gradient, myRole, timeline }: { url?: string, title: string, fullDescription: string[], cardDescription: string, cardImage: string, media: string[], delay: number, gradient: string, myRole: string, timeline: string }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function ProjectCard({ url, title, fullDescription, cardDescripti
         viewport={{ amount: 0.1, once: true }}
       >
         <div className={`p-4 flex flex-col ${gradient} from-primary to-secondary rounded-lg border-1 border-accent shadow-2xl shadow-background items-center`}>
-          <img alt="" draggable={false} className="rounded-lg border-1 border-accent mb-4 duration-300" src={cardImage} />
+          <Image alt="" draggable={false} className="rounded-lg border-1 border-accent mb-4 duration-300" src={cardImage} width={400} height={300} />
           <h2 className="text-center font-semibold text-4xl">
             {title}
           </h2>
