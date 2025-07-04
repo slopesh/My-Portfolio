@@ -150,7 +150,7 @@ export default function About() {
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-            <div className={`${presence && presence.activities && presence.activities.length > 0 ? 'md:col-span-1' : 'md:col-span-2'} h-full flex flex-col`}>
+            <div className={`${presence && presence.activities && presence.activities.length > 0 ? 'md:col-span-1' : 'md:col-span-2'} h-full flex flex-col min-h-[400px]`}>
               <AboutCard
                 title="Other Technologies"
                 description="I use a variety of tools, services, and technologies to streamline the development process."
@@ -162,7 +162,7 @@ export default function About() {
               />
             </div>
             {presence && presence.activities && presence.activities.length > 0 && (
-              <div className="md:col-span-1 h-full flex flex-col">
+              <div className="md:col-span-1 h-full flex flex-col min-h-[400px]">
                 <PresenceCard
                   presence={presence}
                   date={date}
