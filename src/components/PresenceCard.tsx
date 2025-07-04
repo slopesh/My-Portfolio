@@ -59,8 +59,8 @@ export default function PresenceCard({ presence, date, direction, span, gradient
                         showThumbs={false}
                     >
                         {allActivities.map((activity: any, index) => (
-                            <div key={index} className="flex min-[450px]:flex-row flex-col gap-4 items-center px-1 select-none h-full py-4">
-                                <Image alt={activity.name} className="w-20 h-20 rounded object-cover" src={getImageUrl(activity)} width={80} height={80} />
+                            <div key={index} className="flex min-[450px]:flex-row flex-col gap-4 items-center px-1 select-none h-full py-4 w-full">
+                                <Image alt={activity.name} className="w-20 h-20 rounded object-cover border-2 border-white" src={getImageUrl(activity)} width={80} height={80} />
                                 {activity.name === "Spotify" ? (
                                     <div className="flex flex-col overflow-x-hidden w-full min-[450px]:text-left text-center">
                                         <h1 className="text-lg font-bold leading-7 truncate">{activity.song}</h1>
