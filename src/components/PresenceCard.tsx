@@ -20,9 +20,14 @@ export default function PresenceCard({ presence, date, direction, span, gradient
             return activity.album_art_url;
         }
         if (activity.assets?.large_image) {
+            // Discord CDN logic: handle both asset IDs and full URLs
+            if (activity.assets.large_image.startsWith('mp:external')) {
+                // External image (e.g., YouTube, Twitch)
+                return `https://media.discordapp.net/${activity.assets.large_image.replace('mp:', '')}`;
+            }
             return `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
         }
-        return '/default-icon.png'; // A fallback image
+        return '/default-icon.png'; // Fallback image
     };
 
     return (
