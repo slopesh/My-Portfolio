@@ -159,7 +159,6 @@ export default function About() {
                 span={1}
                 delay={0.1}
                 gradient="bg-gradient-to-tr"
-                className="h-full flex flex-col"
               />
             </div>
             {presence && presence.activities && presence.activities.length > 0 && (
