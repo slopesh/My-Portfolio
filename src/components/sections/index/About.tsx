@@ -24,8 +24,6 @@ export default function About() {
     { title: "Gsap", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/zkji5ma1.png" />, link: "https://gsap.com/" },
     { title: "MaterialUI", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg" />, link: "https://mui.com/" },
     { title: "ShadCN", icon: <img alt="" draggable={false} className="h-6" src="https://raw.githubusercontent.com/shadcn/ui/main/apps/www/public/favicon.ico" />, link: "https://ui.shadcn.com/" },
-    { title: "CloudCannon", icon: <img alt="CloudCannon" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=cloudcannon.com" />, link: "https://cloudcannon.com/" }
-    // Add more frontend technologies here - just copy the format above
   ]
 
   // Backend Technologies - Add more as needed
@@ -42,10 +40,8 @@ export default function About() {
     { title: "Elysia", icon: <img alt="" draggable={false} className="h-6" src="https://r2.e-z.host/2082d908-7c65-4fc3-b02a-5f50f9141543/y1iick8a.png" />, link: "https://elysiajs.com/" },
     { title: "Datadoghq", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/datadoghq/datadoghq-icon.svg" />, link: "https://www.datadoghq.com/" },
     { title: "Sentry", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/sentryio/sentryio-icon.svg" />, link: "https://sentry.io/welcome/" },
-    { title: "Morningscore", icon: <img alt="Morningscore" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=morningscore.io" />, link: "https://morningscore.io/" },
     { title: "Auth0", icon: <img alt="Auth0" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=auth0.com" />, link: "https://auth0.com/" },
     { title: "RubyOnRails", icon: <img alt="RubyOnRails" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=rubyonrails.org" />, link: "https://rubyonrails.org/" }
-    // Add more backend technologies here - just copy the format above
   ]
 
   // Other Technologies & Tools - Add more as needed
@@ -71,12 +67,10 @@ export default function About() {
     { title: "Tensorflow", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" />, link: "https://www.tensorflow.org/" },
     { title: "MacBrew", icon: <img alt="" draggable={false} className="h-6" src="https://brew.sh/assets/img/homebrew-256x256.png" />, link: "https://brew.sh/" },
     { title: "Hyper", icon: <img alt="Hyper" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=hyper.is" />, link: "https://hyper.is/" },
-    { title: "Firebase", icon: <img alt="Firebase" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=firebase.studio" />, link: "https://firebase.studio/" },
     { title: "Cobalt", icon: <img alt="Cobalt" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=cobalt.tools" />, link: "https://cobalt.tools/" },
     { title: "OpenRouter", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=openrouter.ai" />, link: "https://openrouter.ai/" },
     { title: "Roocode", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=roocode.com" />, link: "https://roocode.com/" },
     { title: "Mobbin", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=mobbin.com" />, link: "https://mobbin.com/" }
-    // Add more tools and technologies here - just copy the format above
   ]
 
   const [presence, setPresence] = useState<Presence | null>(null);
@@ -156,7 +150,7 @@ export default function About() {
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-            <div className={`${presence && presence.activities && presence.activities.length > 0 ? 'md:col-span-1' : 'md:col-span-2'}`}>
+            <div className={`${presence && presence.activities && presence.activities.length > 0 ? 'md:col-span-1' : 'md:col-span-2'} h-full flex flex-col`}>
               <AboutCard
                 title="Other Technologies"
                 description="I use a variety of tools, services, and technologies to streamline the development process."
@@ -165,10 +159,11 @@ export default function About() {
                 span={1}
                 delay={0.1}
                 gradient="bg-gradient-to-tr"
+                className="h-full flex flex-col"
               />
             </div>
             {presence && presence.activities && presence.activities.length > 0 && (
-              <div className="md:col-span-1">
+              <div className="md:col-span-1 h-full flex flex-col">
                 <PresenceCard
                   presence={presence}
                   date={date}
