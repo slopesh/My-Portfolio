@@ -67,7 +67,6 @@ export default function About() {
     { title: "Tensorflow", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" />, link: "https://www.tensorflow.org/" },
     { title: "MacBrew", icon: <img alt="" draggable={false} className="h-6" src="https://brew.sh/assets/img/homebrew-256x256.png" />, link: "https://brew.sh/" },
     { title: "Hyper", icon: <img alt="Hyper" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=hyper.is" />, link: "https://hyper.is/" },
-    { title: "Cobalt", icon: <img alt="Cobalt" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=cobalt.tools" />, link: "https://cobalt.tools/" },
     { title: "OpenRouter", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=openrouter.ai" />, link: "https://openrouter.ai/" },
     { title: "Roocode", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=roocode.com" />, link: "https://roocode.com/" },
     { title: "Mobbin", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=mobbin.com" />, link: "https://mobbin.com/" }
