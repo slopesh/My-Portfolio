@@ -101,15 +101,13 @@ export default function Hero({ inView, descRef }: { inView: boolean, descRef: an
             </motion.ul>
           </div>
 
-          {/* Right side - Space for future profile image */}
-          <div className="flex-shrink-0 lg:w-80 w-64 h-64 lg:h-80 rounded-2xl border-2 border-dashed border-navy-300/30 flex items-center justify-center bg-navy-950/10">
-            <div className="text-center text-navy-300/60">
-              <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-              </svg>
-              <p className="text-sm font-medium">Profile Image</p>
-              <p className="text-xs opacity-75">Coming Soon</p>
-            </div>
+          {/* Right side - Profile image */}
+          <div className="flex-shrink-0 lg:w-80 w-64 h-64 lg:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-navy-950/20 to-navy-950/40 border border-navy-950/30 shadow-2xl shadow-navy-950/20">
+            <img 
+              src="/me.png" 
+              alt="Array - Profile Picture"
+              className="w-full h-full object-cover object-center"
+            />
           </div>
         </motion.div>
       </section>
