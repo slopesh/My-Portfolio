@@ -39,7 +39,7 @@ export default function PresenceCard({ presence, date, direction, span, gradient
                 transition={{ duration: 0.5, delay: delay, ease: [0.39, 0.21, 0.12, 0.96], }}
                 viewport={{ amount: 0.1, once: true }}
             >
-                <div className={`${gradient} from-primary to-secondary p-4 flex flex-col h-full overflow-hidden rounded-lg border-1 border-accent shadow-2xl shadow-background`}>
+                <div className={`${gradient} from-primary to-secondary p-4 flex flex-col h-full overflow-hidden rounded-lg border-1 border-navy-950 shadow-2xl shadow-navy-950/20`}>
                     <style>
                         {`.control-dots {
                             display: none;

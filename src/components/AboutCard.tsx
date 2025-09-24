@@ -14,7 +14,7 @@ export default function AboutCard({ title, description, tech, direction, span, g
                 transition={{ duration: 0.5, delay: delay, ease: [0.39, 0.21, 0.12, 0.96], }}
                 viewport={{ amount: 0.1, once: true }}
             >
-                <div className={`${gradient} from-primary to-secondary p-4 flex flex-col rounded-lg border-1 border-accent shadow-2xl shadow-background h-full flex flex-col overflow-hidden`}>
+                <div className={`${gradient} from-primary via-navy-950/20 to-secondary p-4 flex flex-col rounded-lg border-1 border-navy-950 shadow-2xl shadow-navy-950/20 h-full overflow-hidden hover:shadow-navy-800/30 transition-all duration-300`}>
                     <h2 className="text-center font-semibold text-4xl">
                         {title}
                     </h2>
