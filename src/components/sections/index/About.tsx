@@ -51,7 +51,6 @@ export default function About() {
     { title: "PostHog", icon: <img alt="" draggable={false} className="h-6" src="https://icon.horse/icon/posthog.com" />, link: "https://posthog.com/" },
     { title: "Betterstack", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=betterstack.com" />, link: "https://betterstack.com/" },
     { title: "Fastly", icon: <img alt="" draggable={false} className="h-6" src="https://www.vectorlogo.zone/logos/fastly/fastly-icon.svg" />, link: "https://www.fastly.com/" },
-    { title: "cside", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=cside.dev" />, link: "https://cside.dev/" },
     { title: "Zed", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=zed.dev" />, link: "https://zed.dev/" },
     { title: "Raycast", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=raycast.com" />, link: "https://www.raycast.com/" },
     { title: "NPM", icon: <img alt="" draggable={false} className="h-6" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" />, link: "https://www.npmjs.com/" },
