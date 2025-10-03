@@ -71,37 +71,28 @@ export default function About() {
     { title: "Mobbin", icon: <img alt="" draggable={false} className="h-6" src="https://www.google.com/s2/favicons?sz=64&domain_url=mobbin.com" />, link: "https://mobbin.com/" }
   ]
 
+  // Manual status system (Discord RPC alternative)
   const [presence, setPresence] = useState<Presence | null>(null);
   const [date, setDate] = useState(new Date());
-  const discordId = "798136745068855326";
+  const [isOnline, setIsOnline] = useState(false);
+  
   useEffect(() => {
-    const socket = new WebSocket(`wss://api.lanyard.rest/socket`);
-
-    const handleOpen = () => {
-      console.log("Lanyard WebSocket connected!");
-      socket.send(JSON.stringify({ op: 2, d: { subscribe_to_id: discordId } }));
-    };
-
-    const handleMessage = (event: MessageEvent) => {
-      const data = JSON.parse(event.data);
-
-      if (data.op === 1) { // Opcode 1: HELLO
-        const heartbeatInterval = data.d.heartbeat_interval;
-        setInterval(() => {
-          socket.send(JSON.stringify({ op: 3 }));
-        }, heartbeatInterval);
-      } else if (data.op === 0) { // Opcode 0: EVENT
-        setPresence(data.d);
+    // Check if user has set a manual status
+    const savedStatus = localStorage.getItem('discord-status');
+    if (savedStatus) {
+      try {
+        const statusData = JSON.parse(savedStatus);
+        setPresence(statusData);
+        setIsOnline(true);
+        console.log("Manual Discord status loaded:", statusData);
+      } catch (error) {
+        console.log("Failed to parse saved status");
       }
-    };
-
-    socket.addEventListener("open", handleOpen);
-    socket.addEventListener("message", handleMessage);
+    }
 
     const timer = setInterval(() => setDate(new Date()), 1000);
 
     return () => {
-      socket.close();
       clearInterval(timer);
     };
   }, []);
@@ -148,7 +139,7 @@ export default function About() {
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-            <div className={`${presence && presence.activities && presence.activities.length > 0 ? 'md:col-span-1' : 'md:col-span-2'} h-full flex flex-col min-h-[400px]`}>
+            <div className={`${isOnline && presence && presence.activities && presence.activities.length > 0 ? 'md:col-span-1' : 'md:col-span-2'} h-full flex flex-col min-h-[400px]`}>
               <AboutCard
                 title="Other Technologies"
                 description="I use a variety of tools, services, and technologies to streamline the development process."
@@ -159,7 +150,7 @@ export default function About() {
                 gradient="bg-gradient-to-tr"
               />
             </div>
-            {presence && presence.activities && presence.activities.length > 0 && (
+            {isOnline && presence && presence.activities && presence.activities.length > 0 ? (
               <div className="md:col-span-1 h-full flex flex-col min-h-[400px]">
                 <PresenceCard
                   presence={presence}
@@ -170,7 +161,47 @@ export default function About() {
                   gradient="bg-gradient-to-tl"
                 />
               </div>
-            )}
+            ) : !isOnline ? (
+              <div className="md:col-span-1 h-full flex flex-col min-h-[400px]">
+                <PresenceCard
+                  presence={{
+                    discord_user: {
+                      id: "0",
+                      username: "Array",
+                      avatar: "",
+                      discriminator: "0000",
+                    },
+                    discord_status: "online",
+                    spotify: null,
+                    activities: [{
+                      application_id: "spotify",
+                      name: "Spotify",
+                      details: "Mutiny",
+                      state: "by Killstation; Thepoolboi",
+                      type: 2,
+                      timestamps: {
+                        start: Date.now() - 77000,
+                        end: Date.now() + 40000
+                      },
+                      assets: {
+                        large_image: "spotify:track:mutiny",
+                        large_text: "Mutiny",
+                        small_image: "spotify",
+                        small_text: "Spotify"
+                      },
+                      emoji: {
+                        name: ""
+                      }
+                    }]
+                  }}
+                  date={new Date()}
+                  direction="bottom"
+                  span={1}
+                  delay={0.1}
+                  gradient="bg-gradient-to-tl"
+                />
+              </div>
+            ) : null}
           </div>
         </div>
       </section>
