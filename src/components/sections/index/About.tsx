@@ -119,14 +119,14 @@ export default function About() {
           About Me
         </motion.h1>
         <div className="flex flex-col gap-4 mt-4">
-          <AboutCard
-            title="Overall"
-            description="Hey! I'm Arrays — a 17-year-old Full Stack Developer with nearly 4 years of hands-on experience across a wide range of tech stacks. I specialize in building scalable applications, experimenting with backend infrastructure, and creating smooth frontend experiences. Since 2018, I've also been deeply rooted in the technical Minecraft scene, working on everything from custom clients and proxy spoofers to automation systems and community tooling. I've proudly contributed to several major underground and open-source projects in that space. Outside of code, I'm an aviation geek, obsessed with flight routes, aircraft systems, and spontaneous travel ideas. I'm also pretty introverted—I don't talk much, but I build a lot."
-            direction="top"
-            span={2}
-            delay={0.1}
-            gradient="bg-gradient-to-tl"
-          />
+                   <AboutCard
+                     title="Overall"
+                     description="Hello! I'm Arrays, a 17-year-old Full Stack Developer with almost 4 years of practical experience in a variety of tech stacks. My areas of expertise are developing scalable apps, experimenting with backend systems, and designing seamless frontend user interfaces. I've also been involved in the technical Minecraft scene since 2018, working on everything from community tools and automation systems to custom clients and proxying tools. I'm proud that I have contributed to a number of significant open-source and underground projects in that field. I'm an aviation nerd outside of coding, fascinated by flight paths, aircraft systems."
+                     direction="top"
+                     span={2}
+                     delay={0.1}
+                     gradient="bg-gradient-to-tl"
+                   />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
             <AboutCard
               title="Frontend"
